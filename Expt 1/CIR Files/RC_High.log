@@ -1,0 +1,20 @@
+******
+** ngspice-34 : Circuit level simulation program
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2020, The ngspice team.
+** Please get your ngspice manual from http://ngspice.sourceforge.net/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Jan 29 2021   17:14:23
+******
+
+No compatibility mode selected!
+
+
+Circuit: rc integrator circuit
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 61
+ngspice 1 -> ngspice-34 done

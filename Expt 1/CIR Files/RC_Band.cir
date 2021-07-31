@@ -1,0 +1,27 @@
+RC Bandpass Filter
+*Resistor connected between In and Out
+R1 In Mid 10k 
+*Capacitor connected between Out and GND
+C1 Mid Out 0.1u
+*Parallel RC Components 
+R2 Out GND 10k
+C2 Out GND 0.1u
+*Voltage Source between In and GND
+Vin In GND dc 0 ac 1
+.ac DEC 10 1 10e5
+*Control Commands
+.control
+run
+set color0 = white
+set color1 = black
+set color2 = blue
+set color3 = red
+set xbrushwidth = 2
+*plot Vdb(In) Vdb(Out)
+meas ac peak MAX vmag(Out)
+meas ac fpeak WHEN vmag(Out)=peak 
+let f3db = peak/sqrt(2)
+meas ac f1 WHEN vmag(Out)=f3db RISE=1      
+meas ac f2 WHEN vmag(Out)=f3db FALL=1
+.endc
+.end

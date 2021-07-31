@@ -1,0 +1,27 @@
+******
+** ngspice-34 : Circuit level simulation program
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2020, The ngspice team.
+** Please get your ngspice manual from http://ngspice.sourceforge.net/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Jan 29 2021   17:14:23
+******
+
+No compatibility mode selected!
+
+
+Circuit: rc bandpass filter
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+No. of Data Rows : 81
+peak                =  9.999965e-01 at=  5.011872e+03
+
+Error: measure  fpeak  (WHEN) : out of interval
+ meas ac fpeak when vmag(out)=9.999965e-01 failed!
+
+f1                  =  1.468642e+03
+f2                  =  1.745991e+04
+ngspice 1 -> ngspice-34 done

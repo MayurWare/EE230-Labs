@@ -1,0 +1,19 @@
+RC Integrator Circuit
+*Resistor connected between In and Out
+R1 In Out 10k 
+*Capacitor connected between Out and GND
+C1 Out GND 0.1u
+*Voltage Source between In and GND
+Vin In GND dc 0 ac 1
+.ac DEC 10 1 10e6
+*Control Commands
+.control
+run
+set color0 = white
+set color1 = black
+set color2 = blue
+set color3 = red
+set xbrushwidth = 2
+plot Vdb(In) Vdb(Out)
+.endc
+.end
