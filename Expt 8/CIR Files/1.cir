@@ -1,0 +1,27 @@
+Mayur Ware | 19D070070 | Improved Half Wave Rectifier-A
+.include ua741.txt
+.include IN914.txt
+*Netlist
+R1 In Neg 10k
+R2 Neg Out 10k
+Rl Out GND 1k
+*Diodes
+D1 Neg O1 1N914
+D2 O1 Out 1N914
+X1 GND Neg PP NP O1 ua741
+VCCp PP GND 12
+VCCm NP GND -12
+Vin In GND sin(0 1 100 0 0 0)
+*Analysis
+.tran 1u 40m
+*Control COmmands
+.control
+run
+set color0 = white
+set color1 = black
+set color2 = blue
+set color3 = red
+plot V(Out) V(In)
+plot V(Out) vs V(In)
+.endc
+.end

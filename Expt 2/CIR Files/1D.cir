@@ -1,0 +1,36 @@
+19D070070 | Mayur Ware
+*Zener Regulator - Analysis
+*Importing the Zener Model
+.SUBCKT ZENER_12 1 2
+D1 1 2 DF
+DZ 3 1 DR
+VZ 2 3 10.8
+.MODEL DF D ( IS=27.5p RS=0.620 N=1.10 CJO=78.3p VJ=1.00 M=0.330 TT=50.1n )
+.MODEL DR D ( IS=5.49f RS=50 N=1.77 )
+.ENDS
+
+*Netlist
+Rs In 1 470
+Rl 4 GND 705
+X1 GND 3 ZENER_12
+*Voltage Sources
+Vin In GND dc 20V
+V1 1 Out dc 0V
+V2 Out 3 dc 0V
+V3 Out 4 dc 0V
+
+*Control Commands
+.dc Vin 15 25 0.5
+.control
+run
+set color0 = white
+set color1 = black
+set color2 = blue
+set color3 = red
+set xbrushwidth = 2
+print V(Out)
+print i(V1) 
+print i(V2)
+print i(V3)
+.endc
+.end

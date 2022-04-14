@@ -1,0 +1,29 @@
+Mayur Ware | 19D070070 | Full Wave Rectifier
+.include ua741.txt
+.include IN914.txt
+*Netlist
+R1 In Neg1 10k
+R2 Neg1 In1 10k
+Rs1 In Neg2 10k
+Rs2 In1 Neg2 5k
+Rf Neg2 Out 10k
+Rl Out GND 1k
+D1 O1 Neg1 1N914
+D2 In1 O1 1N914
+X1 GND Neg1 PP NP O1 ua741
+X2 GND Neg2 PP NP Out ua741
+VCCp PP GND 12
+VCCn NP GND -12
+Vin In GND sin(0 1 100 0 0 0)
+*Analysis
+.tran 1u 40m
+.control
+run
+set color0 = white
+set color1 = black
+set color2 = blue
+set color3 = red
+plot V(Out) V(In)
+plot V(Out) vs V(In)
+.endc
+.end

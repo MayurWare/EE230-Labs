@@ -1,0 +1,34 @@
+19D070070 | Mayur Ware
+*Unregulated Supply – with a Capacitive Filter
+*Importing the Diode Model
+.include Diode_1N914.txt
+D1 3 Out 1N914
+D2 GND 1 1N914
+D3 4 Out 1N914
+D4 GND 2 1N914
+RL Out GND 500
+C Out GND 1000u
+*Reference Voltage Sources
+V1 1 3 dc 0V
+V2 2 4 dc 0V
+
+*Input AC Source
+*sin(offset amplitude frequency delay damping-factor)
+V 1 2 sin(0 21.2132 50 0 0)
+
+*Analysis
+.tran 0.1m 100m
+
+*Control Commands
+.control
+run
+set color0 = white
+set color1 = black
+set color2 = blue
+set color3 = red
+set xbrushwidth = 2
+plot V(Out)
+plot i(V1) 
+plot i(V2)
+.endc
+.end

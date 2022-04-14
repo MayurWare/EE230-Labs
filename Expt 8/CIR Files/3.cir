@@ -1,0 +1,23 @@
+Mayur Ware | 19D070070
+*Single Pole Active Highpass Filter
+.include ua741.txt
+*Netlist
+R1 Out Neg 9.1k
+R2 Neg GND 1k
+Ra Pos GND 4.7k
+Ca In Pos 0.1u
+X1 Pos Neg PP NP Out ua741
+VCCp PP GND 12
+VCCn NP GND -12
+Vin in gnd dc 0 ac 1
+*Analysis
+.ac dec 100 1 10k
+.control
+run
+set color0 = white
+set color1 = black
+set color2 = blue
+set color3 = red
+plot vdb(Out)
+.endc
+.end

@@ -1,0 +1,19 @@
+Mayur Ware | 19D070070
+*NMOS Current Mirror
+.model NXYAA5U nmos L e v e l =1 Vto =1 KP =100 u w=10u L=1u
++ Gamma =0 Phi =0.65 Lambda =0.01
+*Voltage Sources
+VDD DD 0 dc 12V
+VO D 0 dc 1V
+*Resistances
+R DD G 8 . 2 k
+*NMOS
+M1 G G 0 0 NXYAA5U
+M2 D G 0 0 NXYAA5U
+.dc VO 1V 5V 0.2V
+.control
+run
+print i(VDD) i(VO)
+plot i(VO)
+.endc
+.end

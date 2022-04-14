@@ -1,0 +1,29 @@
+Mayur Ware | 19D070070
+*Common Source Amplifier
+.model NXYAA5U nmos Level =1 Vto =1 KP =100 u w=10u L=1u
++ Gamma =0 Phi =0.65 Lambda =0.01
+*Voltage Sources
+VDD DD 0 dc 12V
+VDS Out D dc 0V
+Vin In 0 sin (0 50m 1k 0 0)
+*Resistances
+R1 DD G 8.2k
+R2 G 0 3.3k
+Rd DD Out 3.3k
+Rs S 0 1k
+*Capacitors
+C1 G In 10u
+Cs S 0 100u
+*NMOS
+M1 D G S 0 NXYAA5U
+
+.tran 0.1u 3m
+.control
+run
+*plot V(in) V(out )
+meas tran a pp v(Out)
+meas tran b pp v(In)
+let gain = -1*a/b
+print gain
+.endc
+.end

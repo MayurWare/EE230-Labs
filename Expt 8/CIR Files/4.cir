@@ -1,0 +1,25 @@
+Mayur Ware | 19D070070
+*Sallen-Key (2-pole) Active Lowpass Filter
+.include ua741.txt
+*Netlist
+R1 Out Neg 1.8k
+R2 Neg GND 3.3k
+Ra In A 4.7k
+Rb A Pos 4.7k
+Ca A Out 0.1u
+Cb Pos GND 0.1u
+X1 Pos Neg PP NP Out ua741
+VCCp PP GND 12
+VCCn NP GND -12
+Vin In GND dc 0 ac 1
+*Analysis
+.ac dec 100 1 10k
+.control
+run
+set color0 = white
+set color1 = black
+set color2 = blue
+set color3 = red
+plot vdb(Out)
+.endc
+.end

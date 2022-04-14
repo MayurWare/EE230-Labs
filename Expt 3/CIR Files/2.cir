@@ -1,0 +1,37 @@
+19D070070 | Mayur Ware
+*Common-Emitter Amplifier: Biasing Circuit
+.model bc547a NPN IS=10f BF=200 ISE=10.3f IKF=50m NE=1.3
++ BR=9.5 VAF=80 IKR=12m ISC=47p NC=2 VAR=10 RB=280 RE=1 RC=40
++ tr=0.3u tf=0.5n cje=12p vje=0.48 mje=0.5 cjc=6p vjc=0.7 mjc=0.33 kf=2f
+
+*BJT
+Q1 1 2 3 bc547a
+
+*Voltage Sources
+Vin In GND 12
+V1 4 GND dc 0 ac 0.01
+
+*Resistors
+R1 In 2 10k
+R2 2 GND 2.2k
+Rc In 1 1.2k
+Re 3 GND 1k
+Rl 5 GND 100k
+
+*Capacitors
+C1 2 4 10u
+C2 1 5 10u
+Ce 3 GND 100u
+
+*Control Commands
+.ac dec 10 10 10Meg
+.control
+run
+set color0 = white
+set color1 = black
+set color2 = blue
+set color3 = red
+set xbrushwidth = 2
+plot -V(5)*100
+.endc
+.end

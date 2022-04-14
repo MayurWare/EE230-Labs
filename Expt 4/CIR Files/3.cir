@@ -1,0 +1,39 @@
+19D070070 | Mayur Ware
+*BJT Differential Pair Circuit
+.model bc547a NPN BF=400 NE=1.3 ISE=10.3F IKF=50M IS=10F VAF=80 ikr=12m
++ BR=9.5 NC=2 VAR=10 RB=280 RE=1 RC=40 VJE=.48 tr=.3u tf=.5n
++cje=12p vje=.48 mje=.5 cjc=6p vjc=.7 mjc:.33 isc=47p kf=2f
+*BJT
+Q1 C1 B1 E bc547a
+Q2 C2 B2 E bc547a
+*Voltage Sources
+Vcc CC GND 12
+V1 CC 1 dc 0
+V2 CC 2 dc 0
+Vee GND EE 12
+*Input AC Source
+*sin(offset amplitude frequency delay damping-factor)
+V 3 GND sin(0 10m 1k 0 0)
+*Resistors
+Rc1 1 C1 6.8k
+Rc2 2 C2 6.8k
+Re E EE 10k
+Rb1 B1 3 1k
+Rb2 B2 GND 1k
+*Control Commands
+.tran 0.1m 2m
+.control
+run
+meas tran a pp V(C1)
+meas tran b pp V(3)
+set color0 = white
+set color1 = black
+set color2 = blue
+set color3 = green
+set color4 = black
+set xbrushwidth = 2
+print a/b
+plot V(3) V(C1) V(C2)
+*plot V(C2) vs V(3)
+.endc
+.end

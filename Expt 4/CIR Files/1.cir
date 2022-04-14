@@ -1,0 +1,25 @@
+19D070070 | Mayur Ware
+*PNP BJT Biasing Circuit
+.model bc557a PNP IS=10f BF=100 ISE=10.3f IKF=50m NE=1.3
++ BR=9.5 VAF=80 IKR=12m ISC=47p NC=2 VAR=10 RB=280 RE=1 RC=40
++ tr=0.3u tf=0.5n cje=12p vje=0.48 mje=0.5 cjc=6p vjc=0.7 mjc=0.33 kf=2f
+.include zener_B.txt
+*BJT
+Q1 4 3 2 bc557a
+*Voltage Sources
+Vin 1 GND 12
+Vl 5 GND dc 0
+Ve 6 2 dc 0
+Vb 3 7 dc 0
+X1 3 1 DI_1N4734A
+*Resistors
+Re 1 6 4.7k
+Rb 7 GND 2.2k
+Rl 4 5 1k
+*Control Commands
+.dc Rl 1k 10k 1k
+.control
+run
+print i(Vl) vs V(4)
+.endc
+.end

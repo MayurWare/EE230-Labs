@@ -1,0 +1,40 @@
+******
+** ngspice-34 : Circuit level simulation program
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2020, The ngspice team.
+** Please get your ngspice manual from http://ngspice.sourceforge.net/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Jan 29 2021   17:14:23
+******
+
+No compatibility mode selected!
+
+
+Circuit: 19d070070 | mayur ware
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Warning: 1n914: junction potential VJ too large, limited to 2.000000
+Warning: 1n914: junction potential VJ too large, limited to 2.000000
+Warning: 1n914: junction potential VJ too large, limited to 2.000000
+Warning: 1n914: junction potential VJ too large, limited to 2.000000
+Warning: v: no DC value, transient time 0 value used
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+3                                 -2.81231e-19
+out                               -4.29968e-23
+1                                 -2.81231e-19
+4                                 -2.81231e-19
+2                                 -2.81231e-19
+v#branch                           9.62965e-35
+v2#branch                         -2.14984e-26
+v1#branch                         -2.14984e-26
+
+
+No. of Data Rows : 1018
+ngspice 1 -> ngspice-34 done

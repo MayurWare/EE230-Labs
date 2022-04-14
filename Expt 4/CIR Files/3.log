@@ -1,0 +1,49 @@
+******
+** ngspice-34 : Circuit level simulation program
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2020, The ngspice team.
+** Please get your ngspice manual from http://ngspice.sourceforge.net/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Jan 29 2021   17:14:23
+******
+
+No compatibility mode selected!
+
+
+Circuit: 19d070070 | mayur ware
+
+Warning: Model issue on line 3 :
+  .model bc547a npn bf=400 ne=1.3 ise=10.3f ikf=50m is=10f vaf=80 ikr=12m  ...
+unrecognized parameter (mjc:.33) - ignored
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Warning: v: no DC value, transient time 0 value used
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+c1                                     8.16123
+b1                                 -0.00325643
+e                                    -0.644385
+c2                                     8.16123
+b2                                 -0.00325643
+cc                                          12
+1                                           12
+2                                           12
+ee                                         -12
+3                                            0
+v#branch                          -3.25643e-06
+vee#branch                         -0.00113556
+v2#branch                          0.000564524
+v1#branch                          0.000564524
+vcc#branch                         -0.00112905
+
+
+No. of Data Rows : 59
+a                   =  1.196783e+00 from=  0.000000e+00 to=  0.000000e+00
+b                   =  1.993003e-02 from=  0.000000e+00 to=  0.000000e+00
+a/b = 6.004923e+01
+ngspice 1 -> ngspice-34 done

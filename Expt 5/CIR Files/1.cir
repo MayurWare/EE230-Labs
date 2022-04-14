@@ -1,0 +1,23 @@
+Mayur Ware | 19D070070
+*NMOS Output Characteristics
+.model NXYAA5U nmos Level=1 Vto=0.7 KP=80u w=14.8u L=1u
++ Gamma=0 Phi=0.65 Lambda=0.0
+*Voltage Sources
+V1 B D 0
+V2 A GND 1
+VGS G GND 2
+*NMOS
+M1 D G GND GND NXYAA5U
+*Resistor
+RD A B 2.2k
+*Control Commands
+.control
+dc V2 0 50 0.2 VGS 2 5 1
+run
+set color0 = white
+set color1 = black
+set color2 = blue
+set color3 = red
+plot i(V1)
+.endc
+.end
